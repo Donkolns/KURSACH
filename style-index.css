@@ -1,0 +1,98 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+.header-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/001.png);
+    background-image: NO-REPEAT;
+}
+
+h1 {
+  font-family: "Advent Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: white;
+  margin-top: 2%;
+  font-size: 64px;
+}
+
+.modal {
+    background-color: #5e5e5ea8;
+    border-radius: 33px;
+    width: 750px;
+    height: 660px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.h1-model {
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+  font-size: 55px;
+  text-transform: uppercase;
+}
+
+.h2-model {
+    font-family: "Martel Sans", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  .input-model {
+    width: 520px;
+    height: 60px;
+    font-family: "Martel Sans", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+  }
+
+      
+  a{
+    text-decoration: none;
+}
+
+.send {
+    font-family: "Martel Sans", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 32px;
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    padding: 3px 120px;
+    border-radius: 17px;
+    margin-top: 10px;
+}
+
+
+.reset {
+  color: #ff0000;
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 24px;
+  text-decoration: underline;
+  text-transform: uppercase;
+
+}
