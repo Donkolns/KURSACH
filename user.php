@@ -1,5 +1,5 @@
 <?php session_start();
-require_once "../database/connect.php";
+require_once "database/connect.php";
 
 if (isset($_SESSION["message"])) {
     $mess = $_SESSION["message"];
@@ -25,17 +25,53 @@ INNER JOIN  type_application on type_application.id_type= application.type_appli
 where application.id_user = '$id_user' "
     )
 );
-require_once "../header.php";
+require_once "header.php";
+
+
+$id_appl = isset($_GET["id_appl"]) ? $_GET["id_appl"] : 1;
+$query = "SELECT * from `application`       ";
+$check = mysqli_query($connect, $query);
+$appll = mysqli_fetch_all(mysqli_query($connect, $query));
+$page =  isset($_GET["page"]) ? $_GET["page"] : 1;
+$paginate_count = 1;
+
+$offset = $page * $paginate_count - $paginate_count;
+$query = "SELECT * FROM `application` 
+INNER JOIN users on users.id_user = application.id_user
+INNER JOIN  status on status.id_status = application.status_application 
+INNER JOIN  type_application on type_application.id_type= application.type_application
+where application.id_user = '$id_user' ";
+$result_2 = " LIMIT $paginate_count OFFSET $offset ";
+$result_1 = mysqli_fetch_all(mysqli_query($connect, $query . $result_2));
+$id_appl = $appll["0"];
+
 ?>
-<section class="bg1">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Страница пользователя</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<section class="bg-user-cab">
     <div class="lichn">
         <h1>Личный кабинет</h1>
         <?php while ($info = mysqli_fetch_array($result)) { ?>
             <div class="persacc">
                 <div>
-                    <img src="../images/<?= $info['photo']; ?>" alt="" class="photo_profile">
+                    <img src="images/<?= $info['photo']; ?>" alt="" class="photo_profile">
                     <p class="p-user">Сменить аватарку</p>
-                    <form action="../database/edit_foto_db.php" method="POST" enctype="multipart/form-data" class="form_photo">
+                    <form action="database/edit_foto_db.php" method="POST" enctype="multipart/form-data" class="form_photo">
                         <input type="hidden" name="id" value="<?= $id_user ?>">
                         <input type="file" name="photo" class="input_photo">
                         <input type="submit" value="Сменить" class="submit_photo">
@@ -142,6 +178,81 @@ require_once "../header.php";
                     <?= $military['military_office'] ?>
                 </p>
             </div>
+        </div>
+    </div>
+
+    <div class="appl-user">
+        <h1 id="appl_block">Заявки</h1>
+        <div class="appl">
+            <div class="appl_form_one">
+                <h2 class="h2_appl">Поле для <br> заполнения заявки</h2>
+
+                <form action="../database/application-db.php" method="POST" class="form_appl">
+                    <div class="pirch">
+                        <label for="comment" class="h2-model">Причина:</label>
+                        <input type="hidden" name="user_id" value="<?= $id_user ?>">
+                        <select class="form-select h-25 w-50" name="appl_type">
+
+                            <?php foreach ($type_application as $appl_type) { ?>
+                                <option class="" value="<?= $appl_type['0'] ?>"><?= $appl_type['1'] ?></option>
+                            <?php } ?>
+                        </select>
+                        <div class="form__item">
+                            <label for="comment" class="h2-model">Комментарий:</label>
+                            <textarea type="text" class="input-model" name="comment" required></textarea>
+                        </div>
+                    </div>
+
+
+                    <input type="submit" value="Отправить" class="send_appl">
+                </form>
+
+            </div>
+
+            <div class="appl_form_two">
+                <p><a name="top"></a></p>
+                <h2 class="h2_appl">Отправленные заявки</h2>
+                <div class="persacc-inf">
+                    <div class="appl-info-div">
+                        <?php foreach ($result_1 as $info) { ?>
+                            <p class="appl-info">Имя: <span class="appl-name-info"><?= $info['7']; ?></span></p>
+                            <p class="appl-info">Фамилия: <span class="appl-name-info"><?= $info['9']; ?></span></p>
+                            <p class="appl-info">Причина: <span class="appl-name-info"><?= $info['20']; ?></span></p>
+                            <p class="appl-info">Комментарий: <span class="appl-name-info"><?= $info['2']; ?></span></p>
+                            <p class="appl-info">Статус: <span class="appl-name-info"><?= $info['18']; ?></span></p>
+                        <?php } ?>
+                    </div>
+
+                </div>
+
+                <nav class="appl-nav" aria-label="Page navigation example" class="nav-pag">
+                    <ul class="pagination">
+
+
+                        <?php
+                        if (mysqli_num_rows($check) == 0) { ?>
+                            <p>Нет заявок</p>
+                        <?php } else { ?>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <?php for ($i = 1; $i <= ceil(mysqli_num_rows($check) / $paginate_count); $i++) { ?>
+                                <li class="page-item"><a class="page-link" href="?page=<?= $i ?>#top">
+                                        <?= $i ?></a></li>
+                            <?php } ?>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        <?php } ?>
+
+                    </ul>
+                </nav>
+            </div>
+
         </div>
     </div>
 </section>

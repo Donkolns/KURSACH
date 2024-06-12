@@ -1,0 +1,429 @@
+@font-face {
+  font-family: "Martel Sans Black";
+  src: url("/fonts/MartelSans-Black.ttf");
+}
+
+@font-face {
+  font-family: "Martel Sans Bold";
+  src: url("/fonts/MartelSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Martel Sans ExtraBold";
+  src: url("/fonts/MartelSans-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Martel Sans ExtraLight";
+  src: url("/fonts/MartelSans-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "Martel Sans Light";
+  src: url("/fonts/MartelSans-Light.ttf");
+}
+
+@font-face {
+  font-family: "Martel Sans Regular";
+  src: url("/fonts/MartelSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Martel Sans SemiBold";
+  src: url("/fonts/MartelSans-SemiBold.ttf");
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+body {
+  font-family: "Martel Sans", sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Martel Sans", sans-serif;
+  background-color: #000851;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  text-transform: uppercase;
+  height: 130px;
+}
+
+.appl-nav {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Martel Sans", sans-serif;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.signout {
+  display: flex;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  width: 240px;
+  height: 70px;
+  background-color: white;
+  border-radius: 17px;
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo_profile {
+  width: 430px;
+  height: 600px;
+  border: 3px solid #000851;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  color: black;
+  font-size: 64px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.persacc {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  margin-top: 50px;
+}
+
+.persacc-inf {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.shtat-name {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+
+.lichn {
+  margin-top: 40px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.option-appl {
+  height: 200px;
+  font-size: 10px;
+}
+
+.bg {
+  background-image: url(../images/bg1.png);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  height: 2700px;
+}
+
+.bg1 {
+  background-image: url(../images/bg1.png);
+  width: 100%;
+  height: 2000px;
+}
+
+.bg-2 {
+  background-image: url(../images/bg1.png);
+  width: 100%;
+  height: 1150px;
+}
+.bg-user-cab {
+  background-image: url(../images/bg-user.png);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  height: 2900px;
+}
+.h1-info {
+  margin-top: 30px;
+}
+
+.appl {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-text {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header-text:hover {
+  transform:scale(1.03);
+  color: red;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.h2-user {
+  color: #0015D7;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.p-user {
+  color: black;
+  font-size: 36px
+}
+
+#appl {
+  margin-top: 80px;
+  color: white;
+  margin-bottom: 80px;
+}
+
+.user-info {
+  margin-top: 80px;
+}
+
+.appl_form_one {
+  width: 560px;
+  height: 690px;
+  background-color: rgba(0, 0, 0, 0.696);
+  border-radius: 20px;
+}
+
+.h2_appl {
+  font-size: 48px;
+  color: white;
+  text-align: center;
+}
+
+.appl_form_two {
+  width: 670px;
+  height: 690px;
+  background-color: rgba(0, 0, 0, 0.696);
+  border-radius: 20px;
+}
+
+.h2-model{
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.input-model {
+  border-radius: 20px;
+  width: 420px;
+  height: 180px;
+  font-size: 20px;
+}
+
+.send_appl {
+  width: 305px;
+  height: 70px;
+  background-color: #FF0000;
+  color: white;
+  font-weight: 400;
+  font-size: 32px;
+  border-radius: 17px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.form-select {
+  width: 155px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.appl-info {
+  font-weight: 600;
+  color: #FF0000;
+  font-size: 40px;
+}
+
+.appl-name-info {
+  font-weight: 500;
+  color: white;
+  font-size: 36px;
+}
+
+.form_appl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 20vw;
+}
+
+.pirch {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.appl-info-div {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 0 auto;
+}
+
+.photo_shtat {
+  width: 700px;
+  height: 475px;
+  border: 3px solid #000851;
+}
+
+.cards-shtat {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-info {
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.bg-admin {
+  background-image: url(../images/adminbg.png);
+  height: 1080px;
+}
+
+.bg-user {
+  background-image: url(../images/bg-adm-user.png);
+  height: 1500px;
+}
+
+.admin-h1{
+  color: white; 
+  padding-top: 50px;
+}
+
+.bg-shtat {
+  background-image: url(../images/bg-shtat.png);
+  height: 950px;
+}
+.admin-btn1 {
+  height: 100px;
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+  color: #fff;
+  background-color: #FF0000;
+  border-radius: 17px;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.btns-admin{
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width:1500px;
+  height: 300px;
+}
+
+.btns-admin-b1{
+  display: flex;
+  gap:30px;
+}
+
+.shtat-h1 {
+  color: #FF0000;
+  padding-top: 50px;
+}
+
+.form-add {
+  display: flex;
+  flex-direction: column;
+}
+
+.h2-appl-model {
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.form-filter {
+  display: flex;
+  justify-content: center;
+}
+
+.submit_photo {
+  display: flex;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  width: 30%;
+  height: 30px;
+  background-color: #000851;
+  border-radius: 17px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.form_photo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.div_select {
+  display: flex;
+  flex-direction: column;
+  margin-left: 215px;
+  margin-bottom: 80px;
+}
+
+.edit-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.edit-menu-text {
+  text-align: center;
+  font-size: 48px;
+  color: #000;
+  width: 455px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.card_decor {
+  display: flex;
+  justify-content: space-around;
+}
